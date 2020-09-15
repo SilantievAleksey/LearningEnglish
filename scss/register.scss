@@ -1,0 +1,310 @@
+$font_header: 'Josefin Sans' !global;
+$font_main: 'Kurale' !global;
+$font_footer: 'Inconsolata', monospace !global;
+
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.container{
+  width: 100%;
+  padding-right: 100px;
+  padding-left: 100px;
+}
+
+/*Header*/
+header{
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(-20deg, #d558c8 0%, #24d292 100%);
+  position:fixed;
+  top:0;
+  left:0;
+  min-width:100%;
+  min-height:100%;
+}
+
+.menu_intro{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.menu_intro_main{
+  display: flex;
+  align-items: center;
+  .item:first-of-type{
+    a{
+      border: 3px solid #252732;
+      border-radius: 10px;
+      width: 170px;
+      color: #252732;
+      margin-right: 20px;
+      background-color: #ececef;
+      &:hover {
+        background-color: #252732;
+        color: #fff;
+        transition: 0.3s linear;
+      }
+    }
+  }
+}
+
+.language{
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+  a{
+    color: #fff;
+    font-family: $font_header;
+    font-size: 20px;
+    margin-left: 40px;
+    &:hover{
+      color: #252732;
+      transition: 0.3s linear;
+    }
+  }
+  nav{
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    a{
+      display: block;
+      text-decoration: none;
+      outline: none;
+      transition: .4s ease-in-out;
+    }
+  }
+}
+
+.topmenu {
+  backface-visibility: hidden;
+}
+
+.topmenu > li {
+  display: inline-block;
+  position: relative;
+}
+
+.topmenu > li > a {
+  font-family: 'Exo 2', sans-serif;
+  height: 70px;
+  line-height: 70px;
+  padding: 0 30px;
+  font-weight: bold;
+  color: #252732;
+  text-transform: uppercase;
+}
+
+.down{
+  background: url("../images/LanguageLearn.png");
+  background-repeat: no-repeat;
+  display: block;
+  width: 64px;
+  height: 64px;
+}
+
+.down:after {
+  content: "\f107";
+  margin-left: 35px;
+  font-family: FontAwesome;
+}
+
+.down:hover{
+  color: #ff5f60;
+}
+
+.submenu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background: #ececef;
+  border: 2px solid #252732;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 5;
+  width: 200px;
+  transform: perspective(600px) rotateX(-90deg);
+  transform-origin: 0% 0%;
+  transition: .3s ease-in-out;
+  img{
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+  li button{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 10px;
+    background-color: #c1c9cb;
+    border: none;
+    border-radius: 10px;
+    width: 180px;
+    margin-left: 8px;
+    cursor: pointer;
+    &:hover{
+      background: #ff5f60;
+      color: #fff;
+      transition: 0.3s linear;
+    }
+  }
+  li:last-of-type{
+    margin-bottom: 10px;
+  }
+}
+
+.topmenu > li:hover .submenu{
+  visibility: visible;
+  opacity: 1;
+  transform: perspective(600px) rotateX(0deg);
+}
+
+.submenu li p{
+  color: #252732;
+  font-size: 13px;
+  font-family: $font_header;
+}
+
+.logo {
+  img{
+    width: 150px;
+    height: 50px;
+  }
+}
+/*/Header*/
+
+/*Register*/
+.register_main{
+  margin: 0 auto;
+  width: 400px;
+  height: 430px;
+  background-color: gray;
+  border-radius: 10px;
+  h1{
+    padding-top: 10px;
+    font-size: 26px;
+    font-family: $font_main;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.register_mail,.register_password,.register_password_remember,.register_login{
+  display: flex;
+  justify-content: center;
+  input{
+    border: none;
+    outline:none;
+    border-radius: 0 5px 5px 0;
+    font-family: $font_main;
+    background-color: #3b4148;
+    color: #606468;
+    margin-bottom: 10px;
+    padding: 0 16px;
+    width: 250px;
+    height: 50px;
+    font-size: 14px;
+    line-height: 1.5em;
+  }
+  span{
+    border-radius: 5px 0 0 5px;
+    background-color: #363b41;
+    color: #606468;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+  }
+}
+
+.error{
+  display: block;
+  color: red;
+  margin-left: 50px;
+  padding: 0;
+  margin-bottom: 10px;
+  cursor: default;
+}
+
+.register_btn{
+  display: flex;
+  justify-content: center;
+}
+
+.register_main form input:focus{
+  border: 1px solid #fff;
+  color:#fff;
+}
+
+form .register_btn button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: 3px solid #ff5f60;
+  border-radius: 10px;
+  height: 50px;
+  width: 300px;
+  color: #ff5f60;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-family: $font_main;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: none;
+  &:hover {
+    background-color: #ff5f60;
+    color: #fff;
+    transition: 0.3s linear;
+  }
+}
+
+.post_register{
+  margin-top: 10px;
+  text-align: center;
+  a{
+    color: #fff;
+    font-family: $font_main;
+    margin-top: 10px;
+    &:hover{
+      color: #252732;
+    }
+  }
+}
+
+.close{
+  float: right;
+  padding-right: 5px;
+  margin: 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.close:hover,.close:focus {
+  color: red;
+  cursor: pointer;
+}
+/*/Register*/
+
+.page_fix {
+  top: 0 !important;
+  position: static !important;
+}
+
+.skiptranslate {
+  display: none !important;
+}
